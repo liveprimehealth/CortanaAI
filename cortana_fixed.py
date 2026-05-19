@@ -4,8 +4,8 @@ import gspread
 from google.oauth2.service_account import Credentials
 from dotenv import load_dotenv
 from anthropic import Anthropic
-from elevenlabs.client import ElevenLabs
-from elevenlabs.play import play
+# from elevenlabs.client import ElevenLabs
+# from elevenlabs.play import play
 
 load_dotenv(".env")
 
