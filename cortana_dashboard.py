@@ -2,8 +2,16 @@ import streamlit as st
 import gspread
 import pandas as pd
 import json
-from cortana_fixed import call_claude, BASE_SYSTEM, get_today_pillar, get_sheet_leads
+import os
 
+if "ANTHROPIC_API_KEY" in st.secrets:
+    os.environ["ANTHROPIC_API_KEY"] = st.secrets["ANTHROPIC_API_KEY"]
+
+if "GOOGLE_CREDENTIALS_JSON" in st.secrets and not os.path.exists("credentials.json"):
+    with open("credentials.json", "w") as f:
+        f.write(st.secrets["GOOGLE_CREDENTIALS_JSON"])
+
+from cortana_fixed import call_claude, BASE_SYSTEM, get_today_pillar, get_sheet_leads
 st.set_page_config(page_title="Cortana AI Operator", layout="wide")
 PASSWORD = "prime123"
 
