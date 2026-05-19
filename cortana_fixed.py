@@ -11,8 +11,7 @@ load_dotenv(".env")
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
-MODEL = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-latest")
-
+MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-5")
 if not ANTHROPIC_API_KEY:
     print("Missing ANTHROPIC_API_KEY in .env")
     exit()
